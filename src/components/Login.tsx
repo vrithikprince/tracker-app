@@ -12,10 +12,10 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (username === 'Vrithik Prince' && password === 'LetsDoIt') {
+    if (username && password) {
       onLogin();
     } else {
-      setError('Invalid credentials');
+      setError('Please enter username and password');
     }
   };
 
@@ -68,11 +68,6 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
             Sign In
           </button>
         </form>
-
-        <div className="mt-6 text-center text-xs text-gray">
-          <p>Credentials:</p>
-          <p>User: Vrithik Prince | Pass: LetsDoIt</p>
-        </div>
       </div>
     </div>
   );
